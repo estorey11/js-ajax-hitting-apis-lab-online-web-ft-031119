@@ -24,12 +24,12 @@ function displayRepositories() {
 function getCommits(el) {
   const repository = el.dataset.repository;
   const req = new XMLHttpRequest();
-  req.addEventListener('load', showCommits);
+  req.addEventListener('load', displayCommits);
   req.open('GET', 'https://api.github.com/repos/octocat/' + repository + '/commits');
   req.send();
 }
 
-function showCommits() {
+function displayCommits() {
   const commits = JSON.parse(this.responseText);
   const commitsList = `<ul>${commits
     .map(

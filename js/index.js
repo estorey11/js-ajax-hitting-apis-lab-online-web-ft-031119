@@ -41,7 +41,7 @@ function displayCommits() {
         '</li>'
     )
     .join('')}</ul>`;
-    
+    console.log(commitsList)
   document.getElementById('details').innerHTML = commitsList;
 }
 
